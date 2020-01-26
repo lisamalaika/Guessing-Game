@@ -36,9 +36,14 @@ def guess():
 # create number in range 1 to 10
 number_guess = 1
 not_guessed = True
+number_of_guess = 3
+guess_start = 1
 
-while not_guessed:
+while not_guessed and number_of_guess > 0:
+    print("This is guess {} out of {}!".format(guess_start, 3))
     guess()
+    guess_start = guess_start + 1
+    number_of_guess = number_of_guess -1
 
 print("Game Over")
 
