@@ -2,6 +2,7 @@
 var_1 = "Lisa"
 var_2 = "Jessica"
 var_3 = "Thomas"
+var_1 = "Julia"
 
 #print(var_1, var_2, var_3)
 # create array
@@ -18,37 +19,29 @@ for i in range(len(names)):
 #  https://stackoverflow.com/questions/29811082/how-to-print-out-a-numbered-list-in-python-3v
 
 # guessing game
+def guess():
+    global not_guessed
+    print("Guess a number from 1 to 10")
+    user_guess = int(input())
+    print("You guessed", user_guess)
+    if number_guess == user_guess:
+        not_guessed = False
+        print("Congratulations!")
+    elif user_guess < 0 or user_guess > 11:
+        print("You're out of the range!")
+    else: 
+        print("Wrong guess!")
+
+
 # create number in range 1 to 10
 number_guess = 1
-# ask the question
-print("Guess a number from 1 to 10")
-# get user input
-user_guess = int(input())
-print("You guessed", user_guess)
-# evaluate
+not_guessed = True
 
-#guess 1
-if number_guess == user_guess:
-    print("Congratulations!")
-elif user_guess < 0 or user_guess > 11:
-    print("You're out of the range!")
-else: 
-    print("Wrong guess! Guess again")
-user_guess = int(input())
+while not_guessed:
+    guess()
 
-# guess 2
-if number_guess == user_guess:
-    print("Congratulations!")
-elif user_guess < 0 or user_guess > 11:
-    print("You're out of the range!")
-else: 
-    print("Wrong guess! Guess again")
-user_guess = int(input())
+print("Game Over")
 
-# guess 3
-if number_guess == user_guess:
-    print("Congratulations!")
-elif user_guess < 0 or user_guess > 11:
-    print("You're out of the range!")
-else: 
-    print("Wrong guess! You're out of guesses")
+
+
+
